@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>HELLO from React! (3 wootee) Running on docker-compose</p>
+          <p>HELLO from React! (3 wooteeaa) Running on docker-compose</p>
           <a
             className="App-link"
             href="https://reactjs.org"
