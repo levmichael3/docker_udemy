@@ -8,6 +8,19 @@ before_install:
 script:
   - docker run testme npm run test -- --coverage
 
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "docker_udemy"
+  env: "frontend"
+  bucket_name: "elasticbeanstalk-eu-west-1-501540795480"
+  bucket_path: "docker_udemy"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
 notifications: # set notification options
   email:
     recipients:
