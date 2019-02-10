@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/levmichael3/docker_udemy.svg?branch=master)](https://travis-ci.org/levmichael3/docker_udemy)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
