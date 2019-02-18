@@ -1,0 +1,36 @@
+version: "3.1"
+
+services:
+  postgres:
+    image: postgres:latest
+  redis:
+    image: redis:latest
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: ./udemy_complex/server
+    volumes:
+      - /app/node_modules
+      - ./udemy_complex/server:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password
+      - PGPORT=5432
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./udemy_complex/client
+    volumes:
+      - /app/node_modules
+      - ./udemy_complex/client:/app
+    worker:
+      build:
+        dockerfile: Dockerfile
+        context: ./udemy_complex/worker
+      volumes:
+        - /app/node_modules
+        - ./udemy_complex/worker:/app
