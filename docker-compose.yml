@@ -34,3 +34,10 @@ services:
     volumes:
       - /app/node_modules
       - ./udemy_complex/worker:/app
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: ./udemy_complex/nginx
+    restart: always
+    ports:
+      - "8088:80"
