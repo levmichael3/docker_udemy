@@ -27,10 +27,10 @@ services:
     volumes:
       - /app/node_modules
       - ./udemy_complex/client:/app
-    worker:
-      build:
-        dockerfile: Dockerfile
-        context: ./udemy_complex/worker
-      volumes:
-        - /app/node_modules
-        - ./udemy_complex/worker:/app
+  worker:
+    build:
+      dockerfile: Dockerfile
+      context: ./udemy_complex/worker
+    volumes:
+      - /app/node_modules
+      - ./udemy_complex/worker:/app
